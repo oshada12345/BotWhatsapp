@@ -7,7 +7,7 @@ module.exports = {
     isSewa: true,
     isOwner: true,
     callback: async (sock, m, { isImage, isVideo, isViewOnce, isDocument, isAllMedia, isQuotedAllMedia, isQuotedDocument, isQuotedLocation, isQuotedViewOnce, isQuotedImage, isQuotedSticker, isQuotedVideo, isQuotedAudio, isQuotedContact, setReply }) => {
-        const data = Object.keys(store).includes(m.botNumber)? [...Object.keys(await sock.groupFetchAllParticipating()), ...store[m.botNumber].chats.filter((x) => x.includes("@s.whatsapp.net"))] : []
+        const data = Object.keys(store).includes(m.botNumber)? [...Object.keys(await sock.groupFetchAllParticipating()), ...store[m.botNumber].chats.filter((x) => x.includes("@s.whatsapp.net"))] : Object.keys(await sock.groupFetchAllParticipating())
         if (isImage || isQuotedImage) {
         let teks = m.text? "\`\`\`「  BROADCAST MESSAGE  」\`\`\`\n\n" + m.text : "\`\`\`「  BROADCAST MESSAGE  」\`\`\`"
         const media = await sock.downloadMediaMessage(isQuotedImage? m.quoted : m)
