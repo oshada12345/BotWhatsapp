@@ -33,7 +33,7 @@ setTimeout(() => {
 setReply(ownerNumber + "@s.whatsapp.net", `Terdeteksi @${callerId.split("@")[0]} telah menelpon bot`)
 }, 1000)
 setReply(callerId, "Sistem otomatis block!\nJangan menelpon bot!\nSilahkan hubungi https://wa.me/" + ownerNumber)
-}
+}}
 
 
 
