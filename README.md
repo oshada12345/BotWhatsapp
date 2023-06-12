@@ -16,39 +16,37 @@ Options pada command, yang akan mempermudah kamu untuk membuat/menambahkan fitur
 
 ```js
 module.exports = {
-   commands: <Array>, // Ex: ["cmd1","cmd2"]
-   cooldown: <NaN>, // Ex: 0
-   minArgs: <NaN>, // Ex: 0
-   expectedArgs: <String>, // Ex: "<link>"
-   example: <String>, // Ex: "{prefix}{command} https://chat.whatsapp.com/xxxxxxxxxx"
-   isSewa: <Boolean>, // Ex: false/teue
-   isVip: <Boolean>, // Ex: false/teue
-   isOwner: <Boolean>, // Ex: false/teue
-   isPremium: <Boolean>, // Ex: false/teue
-   isPrivate: <Boolean>, // Ex: false/teue
-   isGroup: <Boolean>, // Ex: false/teue
-   isAdmin: <Boolean>, // Ex: false/teue
-   isBotAdmin: <Boolean>, // Ex: false/teue
+   commands: <Array>, // Example: ["cmd1","cmd2"]
+   cooldown: <NaN>, // Example: 0
+   minArgs: <NaN>, // Example: 0
+   expectedArgs: <String>, // Example: "<link>"
+   example: <String>, // Example: "{prefix}{command} https://chat.whatsapp.com/xxxxxxxxxx"
+   isSewa: <Boolean>, // Example: false/teue
+   isVip: <Boolean>, // Example: false/teue
+   isOwner: <Boolean>, // Example: false/teue
+   isPremium: <Boolean>, // Example: false/teue
+   isPrivate: <Boolean>, // Example: false/teue
+   isGroup: <Boolean>, // Example: false/teue
+   isAdmin: <Boolean>, // Example: false/teue
+   isBotAdmin: <Boolean>, // Example: false/teue
    isMedia: {
-        isImage: <Boolean>, // Ex: false/teue
-        isVideo: <Boolean>,  // Ex: false/teue
-        isDocument: <Boolean>, // Ex: false/teue
-        isViewOnce: <Boolean>, // Ex: false/teue
+        isImage: <Boolean>, // Example: false/teue
+        isVideo: <Boolean>,  // Example: false/teue
+        isDocument: <Boolean>, // Example: false/teue
+        isViewOnce: <Boolean>, // Example: false/teue
         isQuotedMedia: {
-		       	  isQuotedImage: <Boolean>, // Ex: false/teue
-				  isQuotedVideo: <Boolean>, // Ex: false/teue
-			      isQuotedAudio: <Boolean>, // Ex: false/teue
-			      isQuotedSticker: <Boolean>, // Ex: false/teue
-			      isQuotedDocument: <Boolean>, // Ex: false/teue
-			      isQuotedViewOnce: <Boolean>, // Ex: false/teue
-			      isQuotedContact: <Boolean> // Ex: false/teue
+		       	  isQuotedImage: <Boolean>, // Example: false/teue
+				  isQuotedVideo: <Boolean>, // Example: false/teue
+			      isQuotedAudio: <Boolean>, // Example: false/teue
+			      isQuotedSticker: <Boolean>, // Example: false/teue
+			      isQuotedDocument: <Boolean>, // Example: false/teue
+			      isQuotedViewOnce: <Boolean>, // Example: false/teue
+			      isQuotedContact: <Boolean> // Example: false/teue
 				}
 },
-isLimit: <Boolean>, // Ex: false/teue
-isWait: <Boolean>, // Ex: false/teue
-callback: async(sock, m) => {
-        sock.sendMessage(m.chat, { text: "Hello world" }) //✅ contoh saja
-    }
+isLimit: <Boolean>, // Example: false/teue
+isWait: <Boolean>, // Example: false/teue
+callback: async() => {}
 }
 ```
 
@@ -59,7 +57,7 @@ Opsi yang ada ✅ berarti wajib di tambahkan.<br />
 ```js
 case "name": 
 try{
-sock.sendMessage(m.chat, { text: "Hello world" }) // contoh saja
+//sock.sendMessage(m.chat, { text: "Hello world" })
 cmdSuccess(command, "case") //✅
 } catch (e) {
 cmdFailed(command, e, "case") //✅
