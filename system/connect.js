@@ -7,7 +7,8 @@ const { Boom } = require("@hapi/boom")
 const { Message, readCommands } = require("@message/msg") 
 const { decodeJid } = require("@libs/function")
 const { serialize, makeWASocket } = require("@libs/serialize")
-const loadDatabase = require("@message/database") 
+const loadDatabase = require("@message/database")
+const callingMessage = require("@message/anticall")
 //=================================================//
 global.db = JSON.parse(fs.readFileSync("./database/database.json"))
 global.db = {
@@ -138,6 +139,10 @@ await Message(sock, m)
 } catch (e) {
 console.log(chalk.whiteBright("├"), chalk.keyword("red")("[ ERROR ]"), `${e}`)
 }
+})
+//=================================================//
+sock.ws.on("CB:call", async (json) => {
+callingMessage(sock, json)
 })
 //=================================================//
 sock.ev.on("creds.update", saveCreds)
