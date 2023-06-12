@@ -203,6 +203,7 @@ return`
   │⭔ ${prefix}addvn ${featError("addvn")? yes : no }
   │⭔ ${prefix}addlimit ${featError("addlimit")? yes : no }
   │⭔ ${prefix}addbalance ${featError("addbalance")? yes : no }
+  │⭔ ${prefix}setcmd ${featError("setcmd")? yes : no }
   │⭔ ${prefix}delowner ${featError("delowner")? yes : no }
   │⭔ ${prefix}depremium ${featError("depremium")? yes : no }
   │⭔ ${prefix}delsewa ${featError("delsewa")? yes : no }
@@ -210,6 +211,7 @@ return`
   │⭔ ${prefix}delvn ${featError("delvn")? yes : no }
   │⭔ ${prefix}dellimit ${featError("dellimit")? yes : no }
   │⭔ ${prefix}delbalance ${featError("delbalance")? yes : no }
+  │⭔ ${prefix}delcmd ${featError("delcmd")? yes : no }
   │⭔ ${prefix}listowner ${featError("listowner")? yes : no }
   │⭔ ${prefix}listpremium ${featError("listpremium")? yes : no }
   │⭔ ${prefix}listsewa ${featError("listsewa")? yes : no }
