@@ -22,6 +22,7 @@ global.db = {
     dashboard: {},
     database: {},
     expired: {},
+    listcmd: {},
     listerror: {},
     menfes: [],
     message: {},
