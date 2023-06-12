@@ -273,8 +273,8 @@ exports.serialize = async (sock, msg) => {
     if (Object.keys(db.users).includes(m.sender) && !m.isPremium && isNaN(db.users[m.sender].limit)) { db.users[m.sender].limit = limitAwal }
     if (Object.keys(db.users).includes(m.sender) && !m.isPremium && isNaN(db.users[m.sender].balance)) { db.users[m.sender].balance = 0 }
     if (!Object.keys(time).includes(m.key.id)) time[m.key.id] = { timeWib: m.timeWib }
-    if (!Object.keys(store).includes(m.botNumber)) store[m.botNumber] = { chats: [m.chat] }
-    if (Object.keys(store).includes(m.botNumber) && !store[m.botNumber].chats.includes(m.chat)) { store[m.botNumber].chats.push(m.chat) }
+    if (!Object.keys(store).includes(m.botNumber) && !m.key.fromMe) { store[m.botNumber] = { chats: [m.chat] }  }
+    if (Object.keys(store).includes(m.botNumber) && !store[m.botNumber].chats.includes(m.chat) && !m.key.fromMe) { store[m.botNumber].chats.push(m.chat) }
     setTimeout(() => {
     fs.writeFileSync("./store/store.json", JSON.stringify(store, null, 2))
     }, 1000)
