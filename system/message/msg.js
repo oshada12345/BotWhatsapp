@@ -85,19 +85,19 @@ if (setPrefix == "prefix") {
 var thePrefix = "MULTI-PREFIX"
 var prefix = /^#.!?|\\^/.test(m.body)? m.body.match(/^#.!?|\\^/gi) : "."
 var isCmd = m.body.startsWith(prefix)
-var command = isCmd? m.body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase() : ""
+var command = (isSticker && Object.keys(db.listcmd).includes(m.message.stickerMessage.fileSha256.toString("base64")))? db.listcmd[m.message.stickerMessage.fileSha256.toString("base64")].command : isCmd? m.body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase() : ""
 var cmdOptions = commands.get(command)
 } else if (setPrefix == "noprefix") {
 var thePrefix = "NO-PREFIX"
 var prefix = ""
 var isCmd = m.body.startsWith(prefix)
-var command = m.body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase()
+var command = (isSticker && Object.keys(db.listcmd).includes(m.message.stickerMessage.fileSha256.toString("base64")))? db.listcmd[m.message.stickerMessage.fileSha256.toString("base64")].command : m.body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase()
 var cmdOptions = commands.get(command)
 } else if (setPrefix == "allprefix") {
 var thePrefix = "ALL-PREFIX"
 var prefix = /^#.!?|\\^/.test(m.body)? m.body.match(/^#.!?|\\^/gi) : "."
 var isCmd = m.body.startsWith(prefix)
-var command = m.body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase()
+var command = (isSticker && Object.keys(db.listcmd).includes(m.message.stickerMessage.fileSha256.toString("base64")))? db.listcmd[m.message.stickerMessage.fileSha256.toString("base64")].command : m.body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase()
 var cmdOptions = commands.get(command)
 }
 //=========================[ COMMAND LOGS ]=========================\\
