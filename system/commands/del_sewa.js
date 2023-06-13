@@ -20,7 +20,7 @@ module.exports = {
         await setReply("Success delete sewa " + groupMetadata.subject)
         } else if (m.isGroup) {
         if (!Object.keys(db.expired[m.botNumber].sewa).includes(m.chat)) return setReply("Belum sewa kak")
-        delete db.expired[m.botNumber].sewa[idGroup]
+        delete db.expired[m.botNumber].sewa[m.chat]
         await setReply("Success delete sewa " + groupName)
         } else setReply("Link group?")
     }
